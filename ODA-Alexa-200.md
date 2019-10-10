@@ -681,5 +681,5 @@ Now others will be able to take advantage of the changes you made to the applica
 
   ![](images/200Linux/Picture200-35.png)
 
-**This completes the Docker Workshop!**
+**This completes the ODA-Alexa Integration Workshop!**
 

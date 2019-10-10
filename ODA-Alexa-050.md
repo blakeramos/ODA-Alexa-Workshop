@@ -1,30 +1,9 @@
-
-# Docker Workshop - Trial Account Set Up
+# ODA-Alexa Integration - Digital Assistant Set Up
 
 ![](images/050Linux/Title050.png)
 
-## Overview
-
-What is Docker? What is a container?
-
-- Docker is the company and containerization technology.
-- [Docker Documentation](https://docs.docker.com)
-- A container is a runtime instance of a docker image: [Container Documentation](https://docs.docker.com/glossary/?term=container)
-
-Containers have been around for many years. Docker created a technology that was usable by mere humans, and was much easier to understand than before. Thus, has enjoyed a tremendous amount of support for creating a technology for packaging applications to be portable and lightweight.
-
-### VM vs Container
-
-![](images/050Linux/Picture025-1.png)
-
-While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the entire guest operating system.
-
-Whereas, Containers include the application, all of its dependencies, but share the kernel with other containers and are not tied to any specific infrastructure, other than having the Docker engine installed on it’s host – allowing containers to run on almost any computer, infrastructure and cloud.
-
-**Note:** At this time, Windows and Linux containers require that they run on their respective kernel base, therefore, Windows containers cannot run on Linux hosts and vice versa.
-
 ## Introduction
-In this lab we will obtain an Oracle Cloud Free Tier Account (if you haven't obtained one already), create ssh key pairs, login into your Cloud Account, create a VCN (Virtual Compute Network) and Compartment, create a new compute instance and finally install docker into the instance.
+This lab discusses the steps taken to build an integration between an Amazon Alexa device and Oracle Digital Assistance. The purpose of doing so is to allow someone to use a smart speaker device to verbally talk to their digital assistant instead of using a typing keyboard interface
 
 ***To log issues***, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
@@ -408,5 +387,5 @@ Set the server to Permissive mode and also ensure that permissive mode survives 
 
 **This completes the Set Up!**
 
-**You are ready to proceed to [Lab 100](Linux100.md)**
+**You are ready to proceed to [Lab 100](ODA-Alexa-100.md)**
 
