@@ -27,21 +27,21 @@
             },
             {
                 "number": "050",
-                "filename": "Linux050.md",
+                "filename": "ODA-Alexa-050.md",
                 "title": "Lab 050: Digital Assistant",
                 "description": "Setting up the Digital Assistant Skill",
                 "labels": {"version": "Heroku"}
             },
             {
                 "number": "100",
-                "filename": "Linux100.md",
+                "filename": "ODA-Alexa-100.md",
                 "title": "Lab 100: Amazon Alexa",
                 "description": "Setting up the Amazon Alexa Skill",
                 "labels": {"version": "Heroku"}
             },
             {
                 "number": "200",
-                "filename": "Linux200.md",
+                "filename": "ODA-Alexa-200.md",
                 "title": "Lab 200: Node server on Heroku",
                 "description": "Connecting Alexa to ODA",
                 "labels": {"version": "Heroku"}
