@@ -3,31 +3,25 @@
 ![](images/050Linux/Title050.png)
 
 ## Introduction
-This lab discusses the steps taken to build an integration between an Amazon Alexa device and Oracle Digital Assistance. The purpose of doing so is to allow someone to use a smart speaker device to verbally talk to their digital assistant instead of using a typing keyboard interface
+
+This lab discusses the steps taken to build an integration between an Amazon Alexa device and Oracle Digital Assistance. The purpose of doing so is to allow someone to use a smart speaker device to verbally talk to their digital assistant instead of using a typing keyboard interface.
 
 ***To log issues***, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
 
 - Obtain an Oracle Cloud Free Tier Account
-- Create the baseline infrastructure to support a Compute instance
-- Create a SSH key pair
-- SSH into the instance: Install Docker and GIT
+- Build or use a simple skill
 
-## Required Artifacts
+# Log into your new Oracle Cloud Account
 
-- If running from Windows: [Putty and PuttyGen](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-
-# Log into your new Oracle Cloud Account and Create Infrastructure
-
-You will create all required infrastructure components within your Oracle Cloud Free Tier account.
+You will create the skill within your Oracle Cloud Free Tier account.
 
 ## Your Oracle Cloud Free Tier Account
 
 ### **Step 1**: Your Oracle Cloud Account
 
-- You have already applied for and received your Oracle Cloud Free Tier Account and will change the default password...
-
+- You have already applied for and received your Oracle Cloud Free Tier Account and will change the default password.
 
 ### **STEP 2**: Log in to your account
 
@@ -55,26 +49,26 @@ You will create all required infrastructure components within your Oracle Cloud 
 
   **NOTE**: You will likely be prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
+### **STEP 3**: Navigate to Digital Assistant
 
-### **STEP 3**: Create a Compartment
+We will build the skill in digital assistant.
 
-Compartments are used to isolate resources within your OCI tenant. User-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
+- Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Platform Services** section of the menu, click **Digital Assistant**. This opens up a new tab.
 
-- Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Identity** section of the menu, click **Compartments**
+    ![](images/digital-assistant.png) 
 
-    ![](images/create-compartment.png) 
+- Click **Create Instance**
 
-- Click **Create Compartment**
+    ![](images/create-digital-assistant-page.png) 
 
-    ![](images/create-compartment-page.png) 
+- In the **Instance Name** field, enter any name you want. For this example we will be using the name `Demo` going forward. Enter a **Description** of your choice. For **Region**, leave as `No Preference`. Click **Next**, then **Create**.
 
-- In the **Name** field, enter any name you want. For this example we will be using the name `Demo` going forward. Enter a **Description** of your choice. Click **Create Compartment**.
+  ![](images/create-digital-assistant-p1.png)
+  ![](images/create-digital-assistant-p2.png)
 
-  ![](images/050Linux/8.png)
+- In a moment, your new Digital Assistant Instance will show up in the list.
 
-- In a moment, your new Compartment will show up in the list.
-
-    ![](images/compartment-created.png) 
+    ![](images/digital-assistant-created.png) 
 
 ### **STEP 4**: Create a Virtual Compute Network
 
