@@ -1,4 +1,4 @@
-![](common-content/images/nahandson-title.png)
+![](images/nahandson-title.png)
 ---
 # Workshop Catalog
 
