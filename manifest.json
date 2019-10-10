@@ -28,15 +28,15 @@
             {
                 "number": "050",
                 "filename": "Linux050.md",
-                "title": "Lab 050: Amazon Alexa",
-                "description": "Setting up the Amazon Alexa Skill",
+                "title": "Lab 050: Digital Assistant",
+                "description": "Setting up the Digital Assistant Skill",
                 "labels": {"version": "Heroku"}
             },
             {
                 "number": "100",
                 "filename": "Linux100.md",
-                "title": "Lab 100: Digital Assistant",
-                "description": "Setting up the Digital Assistant",
+                "title": "Lab 100: Amazon Alexa",
+                "description": "Setting up the Amazon Alexa Skill",
                 "labels": {"version": "Heroku"}
             },
             {
