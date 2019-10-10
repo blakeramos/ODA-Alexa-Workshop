@@ -57,11 +57,7 @@ We will build the skill in digital assistant.
 
     ![](images/digital-assistant.png) 
 
-- Click **Create Instance**
-
-    ![](images/create-digital-assistant-page.png) 
-
-- In the **Instance Name** field, enter any name you want. For this example we will be using the name `Demo` going forward. Enter a **Description** of your choice. For **Region**, leave as `No Preference`. Click **Next**, then **Create**.
+- Click **Create Instance**. In the **Instance Name** field, enter any name you want. For this example we will be using the name `Demo` going forward. Enter a **Description** of your choice. For **Region**, leave as `No Preference`. Click **Next**, then **Create**.
 
   ![](images/create-digital-assistant-p1.png)
   ![](images/create-digital-assistant-p2.png)
