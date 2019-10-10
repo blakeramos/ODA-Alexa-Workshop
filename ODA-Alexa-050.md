@@ -6,12 +6,17 @@
 
 This lab discusses the steps taken to build an integration between an Amazon Alexa device and Oracle Digital Assistance. The purpose of doing so is to allow someone to use a smart speaker device to verbally talk to their digital assistant instead of using a typing keyboard interface.
 
+A **digital assistant** is a user interface driven by artificial intelligence that helps users accomplish a variety of tasks in natural language conversations. A **skill** is a specific chatbot that handles a very specific task, such as managing interactions with a bank or restaurant. Digital assistants consist of one or more skills, and as such are more powerful and versatile than a single chatbot.
+
 ***To log issues***, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
 
 - Obtain an Oracle Cloud Free Tier Account
-- Build or use a simple skill
+- Build a simple skill
+  - Create and understand intents, utterances, and intents
+  - Understand the given conversation flow
+- Set up a channel that generates a webhook
 
 # Log into your new Oracle Cloud Account
 
@@ -55,50 +60,73 @@ We will build the skill in digital assistant.
 
 - Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Platform Services** section of the menu, click **Digital Assistant**. This opens up a new tab.
 
-    ![](images/digital-assistant.png) 
+    ![](images/050ODA/digital-assistant.png) 
 
 - Click **Create Instance**. In the **Instance Name** field, enter any name you want. For this example we will be using the name `Demo` going forward. Enter a **Description** of your choice. For **Region**, leave as `No Preference`. Click **Next**, then **Create**.
 
-  ![](images/create-digital-assistant-p1.png)
-  ![](images/create-digital-assistant-p2.png)
+  ![](images/050ODA/create-digital-assistant-p1.png)
+  ![](images/050ODA/create-digital-assistant-p2.png)
 
 - In a moment, your new Digital Assistant Instance will show up in the list.
 
-    ![](images/digital-assistant-created.png) 
+    ![](images/050ODA/digital-assistant-created.png) 
 
-### **STEP 4**: Create a Virtual Compute Network
+### **STEP 4**: Create a skill
 
-We need a default VCN to define our networking within the `Demo` compartment (_Or the name you used for your compartment_). This is where Subnets and Security Lists, to name a couple get defined for each Availablity Domains in your Tenancy. Oracle Cloud Infrastructure is hosted in regions and availability domains. A region is a localized geographic area, and an availability domain is one or more data centers located within a region. A region is composed of several availability domains. Availability domains are isolated from each other, fault tolerant, and very unlikely to fail simultaneously. Because availability domains do not share infrastructure such as power or cooling, or the internal availability domain network, a failure at one availability domain is unlikely to impact the availability of the others.
+Next, we need to build a skill on digital assistant. If you would like to build a more complex skill, [click this link](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/index.html). For this demo, we will build a simplified version of the pizza chat bot linked in the previous sentence. The chat bot will be able to
 
-All the availability domains in a region are connected to each other by a low latency, high bandwidth network, which makes it possible for you to provide high-availability connectivity to the Internet and customer premises, and to build replicated systems in multiple availability domains for both high-availability and disaster recovery.
+- Click the **small hamburger icon** on the right of the newly provisioned instance (near the "Created On" text) and click **Digital Assistant Designer UI**
 
-- Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Networking** section of the menu, click **Virtual Cloud Networks**
+  ![](images/050ODA/digital-assistant-designer.png)
 
-  ![](images/050Linux/10.PNG)
+- Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Development** section of the menu, click **Skills**
 
-- Select your compartment from the LOV.
+  ![](images/050ODA/digital-assistant-skill-p1.png)
 
-  ![](images/050Linux/10a.png)
+- Click **New Skill**. For the **Display Name** enter "Demo Skill". The **Name** field, which functions as a unique ID for the skill, will be autofilled to "DemoSkill". The version will also be autofilled to "1.0". Click **Create**
 
-- Click **Create Virtual Cloud Network**
+  ![](images/050ODA/digital-assistant-skill-p2.png)
 
-  ![](images/050Linux/11.PNG)
+  **NOTE**: From here on out, the background content might vary from here on out. This will not affect the tutorial.
 
-- Fill in the follow values as highlighted below:
+- Now you will define a few intents. An intent is what the digital assistant uses to categorize incoming utterances. For the purpose of this demo, we will create two intents. Click the green button **+Intent** and change both the **Conversation Name** and **Name** to "OrderPizza". Under **Examples**, in the text box with placeholder text "Enter your example utterances here", add at least 5 examples of what a user would say to _order pizza_. To add your utterance, type the utterance in the text box and press enter (punctuation and capitalization do not matter). Your screen should roughly look like ours in the below picture:
 
-  ![](images/050Linux/12.PNG)
+  ![](images/050ODA/digital-assistant-skill-p3.png)
 
-  ![](images/050Linux/13.PNG)
+  **NOTE**: To close and toggle the grey "Development" menu on the left, click the hamburger menu (shown by the green box).
 
-- Click **Create Virtual Cloud Network**
+- Make another intent by clicking **+Intent**. Set **Conversation Name** and **Name** "CancelPizza", and add at least 5 utterances of what a user would say to _cancel an order of pizza_. Your screen should roughly look like ours in the below picture:
 
-- Click **Close** on the details page:
+  ![](images/050ODA/digital-assistant-skill-p4.png)
 
-  ![](images/050Linux/14.PNG)
+- In the previous picture, the **Validate** and **Train** tools are boxed in green. We will use both of these tools to ensure that the bot is working as intended. First, we will train our bot to build the first Natural Language Understanding (NLU) model. Click **Train**, ensure that **Trainer Ht** is selected (in general, **Trainer Tm** is used for more complex models), and click **Submit**. After a few seconds, the exclamation icon next to the **Train** tool will turn into a check mark icon, indicating that the model is ready to go
 
-- You will see:
+  ![](images/050ODA/digital-assistant-skill-p5.png)
 
-  ![](images/050Linux/15.PNG)
+  **NOTE**: To test an utterance, click **Try It Out!** on the intent view. This opens a dialog on the right side where you can test the model on specific utterances. For instance, if you test "Give me pizza", the model should correctly guess that you are trying to OrderPizza instead of CancelPizza. Alternatively, if you test something unrelated like "chair potato pickle bottle" the model will most likely correctly fail to categorize that utterance as OrderPizza or CancelPizza.
+
+  You are halfway done building this skill!
+
+- Next, we will create some entities. Currently, on the left menu of icons, the icon of a head with dots (Intent) should be selected. Select the icon under that (a speech bubble with a gear). Click **+Entity** and change the **Name** to "PizzaSize". Since there are _discrete_ categorizations of pizza sizes (small, medium, etc), make sure the **Type** under **Configuration** is a "Value list". Click **+Value**. For **Value** enter "Small", and for **Synonyms** enter "Tiny, Smallest, Personal". Continue adding values according to the following table:
+
+  | Value | Synonyms |
+  | ----- | -------- |
+  | Small | Tiny, Smallest, Personal |
+  | Medium | Middle |
+  | Large | Big, Grande, Largest, Biggest |
+  
+  ![](images/050ODA/digital-assistant-skill-p6.png)
+
+  Create another entity with **Name** "PizzaType", **Type** "Value list", and with values according to the following table:
+
+  | Value | Synonyms |
+  | ----- | -------- |
+  | Cheese | Cheesy, Standard, Default |
+  | Meat Lover | Meat, Meaty |
+  | Vegetarian | Veggie, Vegetable |
+  | Combo | Everything |
+
+  ![](images/050ODA/digital-assistant-skill-p7.png)
 
 ### **STEP 5**: Add a Security List entry
 
