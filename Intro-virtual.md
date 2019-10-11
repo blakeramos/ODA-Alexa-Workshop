@@ -6,6 +6,10 @@ A link to the video of the final product can be found below:
 
 <a href="https://www.youtube.com/watch?v=ivNEREBsH9k&t=0s&index=3&list=PLPIzp-E1msrYGLKIgW3njO3uUkvXD0bAH" target="_video">IN PROGRESS</a>
 
+## Introduction
+
+This lab discusses the steps taken to build an integration between an Amazon Alexa device and Oracle Digital Assistance. The purpose of doing so is to allow someone to use a smart speaker device to verbally talk to their digital assistant instead of using a typing keyboard interface.
+
 **Step 1**: Acquire an Oracle Cloud Trial Account
 
 - Bookmark this page for future reference.
