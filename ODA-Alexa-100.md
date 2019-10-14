@@ -41,7 +41,7 @@ This part of the lab builds the Alexa side of the integration.
 
 - From the created skill, select the **Invocation** option on the left panel.
 
-  ![](images/100ODA/alexa-setup-skill-1.png)
+<img src="images/100ODA/alexa-setup-skill-1.png" width="200px">
 
 - Under **Skill Invocation Name**, enter the phrase you would like to invoke the bot (must be 2 words).
 
