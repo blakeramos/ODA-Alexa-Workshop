@@ -44,13 +44,13 @@ This part of the lab builds the ODA-side of the integration.
 
 ### **STEP 3**: Create an instance on digital assistant
 
-We will create a digital assistant instance. If you already see an instance, move on to **STEP 4**.
+We will create a digital assistant instance.
 
 - Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Platform Services** section of the menu, click **Digital Assistant**. This opens up a new tab.
 
     ![](images/050ODA/digital-assistant.png) 
 
-- Click **Create Instance**. In the **Instance Name** field, enter any name you want. For this example we will be using the name `Demo` going forward. Enter a **Description** of your choice. For **Region**, leave as `No Preference`. Click **Next**, then **Create**.
+- If you already see an instance, move on to **STEP 4**. Otherwise, you will need to create a new instance. Click **Create Instance**. In the **Instance Name** field, enter any name you want. For this example we will be using the name `Demo` going forward. Enter a **Description** of your choice. For **Region**, leave as `No Preference`. Click **Next**, then **Create**.
 
   ![](images/050ODA/create-digital-assistant-p1.png)
   ![](images/050ODA/create-digital-assistant-p2.png)
@@ -91,7 +91,7 @@ Next, we will set up the webhook. ODA manages webhooks and similar artifacts usi
 
 - Keep track of the Secret Key and Webhook URL. You will need these in lab 100.
 
-**This completes the Set Up!**
+**This completes the set up on Oracle Digital Assistant!**
 
 **You are ready to proceed to [Lab 100](ODA-Alexa-100.md)**
 
