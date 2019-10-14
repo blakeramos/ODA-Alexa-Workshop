@@ -25,13 +25,11 @@ This part of the lab builds the Alexa side of the integration.
 
   ![](images/100ODA/alexa-create-skill-1.png)
 
-- Enter your skill name. Under **Choose a model to add**, select 'Custom'. Under **Choose a method to host your skill's backend resources**, select 'Provision your own'. 
+- Enter your skill name. Under **Choose a model to add**, select 'Custom'. Under **Choose a method to host your skill's backend resources**, select 'Provision your own'. Finally, select **Create Skill**.
 
   ![](images/100ODA/alexa-create-skill-2.png)
 
   ![](images/100ODA/alexa-create-skill-3.png)
-
-- Click **Create Skill**.
 
 - From **Choose a template**, select 'Start from scratch'.
 
@@ -57,7 +55,7 @@ This part of the lab builds the Alexa side of the integration.
 
   ![](images/100ODA/alexa-setup-skill-5.png)
 
-- Enter a name for your slot into the **Slot Values** textbox. 
+- Enter a name for your slot into the **Slot Values** textbox and press enter. 
 
   ![](images/100ODA/alexa-setup-skill-6.png)
 
@@ -73,7 +71,7 @@ This part of the lab builds the Alexa side of the integration.
 
   ![](images/100ODA/alexa-setup-skill-9.png)
 
-- In **Sample Utterances**, enter {command}
+- In **Sample Utterances**, enter {command} and press enter. 
 
   ![](images/100ODA/alexa-setup-skill-10.png)
 
