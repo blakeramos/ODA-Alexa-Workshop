@@ -76,17 +76,19 @@ heroku git: remote -a <INSERT APP NAME>
 
 # Create webhook in Oracle Digital Assistant
 ## In this section we will create a webhook in Oracle Digital Assistant, change service.js, and redeploy the application.
+### **Pre-step**: Copy heroku app URL
+Go to your heroku app, **click open app** and copy the **URL** in the new tab that was opened.
+![](images/200heroku/openApp.png)
 ### **STEP 1**: Go to your Oracle Digital Assistant Instance.
 ![](images/200heroku/odaInstance.png)
 ### **STEP 2**: Create a channel of type "Webhook".
--Give it a name of your choice. For the "Outgoing webhook URI", go to your heroku app, **click open app**, and copy the **URL** in the new tab that was opened.
-![](images/200heroku/openApp.png)
+-Give it a name of your choice. 
 -The **outgoing webhook URL** will be: **/<URL-THAT-YOU-JUST-COPIED/>/singleBotWebhook/messages** 
 ![](images/200heroku/createWH.png)
 ### **STEP 3**: Route To your Digital Assistant Skill
 ![](images/200heroku/routing.png)
 ### **STEP 3**: Enable the channel
-![](images/200heroku/chanelEnable.png)
+![](images/200heroku/channelEnable.png)
 ### **STEP 4**: Copy SECRET KEY and Webhook URL in the newly created webhook.
 ![](images/200heroku/copyID.png)
    
