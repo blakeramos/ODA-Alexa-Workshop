@@ -104,10 +104,10 @@ Go to your heroku app, **click open app** and copy the **URL** in the new tab th
 ![](images/200heroku/channelSecretKey.png)
 ### **STEP 4**: Change channelUrl in service.js
 ![](images/200heroku/channelUrl.png)
-### **STEP 5**: Redeploy nodeJS application
+### **STEP 5**: Deploy nodeJS application
 Open up terminal and navigate to your directory to where you NodeJS server is located. 
 
--**Deploy your application**
+-**To deploy your application**
     ```
     git add .
     git commit -am "redeploying with correct variables"
