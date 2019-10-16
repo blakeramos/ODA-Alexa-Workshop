@@ -61,7 +61,7 @@ Inside of the nodejs server you downloaded there is a file called package.json. 
   Give it any name you want.
   ***OR***
   Create an app from the [cli](https://devcenter.heroku.com/articles/creating-apps)
-  -![](images/200heroku/appName.png)
+  ![](images/200heroku/appName.png)
 
 ### **STEP 2**: Open NodeJS directory
   - In your terminal go **INTO** the nodejs directory you downloaded.
@@ -77,18 +77,18 @@ heroku git: remote -a <INSERT APP NAME>
 # Create webhook in Oracle Digital Assistant
 ## In this section we will create a webhook in Oracle Digital Assistant, change service.js, and redeploy the application.
 ### **STEP 1**: Go to your Oracle Digital Assistant Instance.
--![](images/200heroku/odaInstance.png)
+![](images/200heroku/odaInstance.png)
 ### **STEP 2**: Create a channel of type "Webhook".
 -Give it a name of your choice. For the "Outgoing webhook URI", go to your heroku app, **click open app**, and copy the **URL** in the new tab that was opened.
--![](images/200heroku/openApp.png)
+![](images/200heroku/openApp.png)
 -The **outgoing webhook URL** will be: **/<URL-THAT-YOU-JUST-COPIED/>/singleBotWebhook/messages** 
--![](images/200heroku/createWH.png)
+![](images/200heroku/createWH.png)
 ### **STEP 3**: Route To your Digital Assistant Skill
--![](images/200heroku/routing.png)
+![](images/200heroku/routing.png)
 ### **STEP 3**: Enable the channel
--![](images/200heroku/chanelEnable.png)
+![](images/200heroku/chanelEnable.png)
 ### **STEP 4**: Copy SECRET KEY and Webhook URL in the newly created webhook.
--![](images/200heroku/copyID.png)
+![](images/200heroku/copyID.png)
    
 
   
@@ -97,11 +97,11 @@ heroku git: remote -a <INSERT APP NAME>
 ### **STEP 1**: Open service.js in a code editor
 ### **STEP 2**: Change amazon application ID in service.js
  -Use the amazon application id you copied earlier and copy it here:
-![](images/200heroku/appID.png)
+[](images/200heroku/appID.png)
 ### **STEP 3**: Change channelSecretKey in service.js
-![](images/200heroku/channelSecretKey.png)
+[](images/200heroku/channelSecretKey.png)
 ### **STEP 4**: Change channelUrl in service.js
-![](images/200heroku/channelUrl.png)
+[](images/200heroku/channelUrl.png)
 ### **STEP 5**: Redeploy nodeJS application
 Open up terminal and navigate to your directory to where you NodeJS server is located. 
 
