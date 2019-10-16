@@ -99,11 +99,11 @@ Go to your heroku app, **click open app** and copy the **URL** in the new tab th
 ### **STEP 1**: Open service.js in a code editor
 ### **STEP 2**: Change amazon application ID in service.js
  -Use the amazon application id you copied earlier and copy it here:
-[](images/200heroku/appID.png)
+![](images/200heroku/appID.png)
 ### **STEP 3**: Change channelSecretKey in service.js
-[](images/200heroku/channelSecretKey.png)
+![](images/200heroku/channelSecretKey.png)
 ### **STEP 4**: Change channelUrl in service.js
-[](images/200heroku/channelUrl.png)
+![](images/200heroku/channelUrl.png)
 ### **STEP 5**: Redeploy nodeJS application
 Open up terminal and navigate to your directory to where you NodeJS server is located. 
 
