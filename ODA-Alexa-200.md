@@ -54,12 +54,14 @@ Inside of the nodejs server you downloaded there is a file called package.json. 
   }
 } 
 ```
-# Heroku application deployment
+# Heroku application deployment setup
 ## Follow the below steps to create an app in heroku and deploy the sample code
 ### **STEP 1**: Go to heroku dashboard and create an app
+  -![](images/200heroku/createApp.png)  
   Give it any name you want.
   ***OR***
   Create an app from the [cli](https://devcenter.heroku.com/articles/creating-apps)
+  -![](images/200heroku/appName.png)
 
 ### **STEP 2**: Open NodeJS directory
   - In your terminal go **INTO** the nodejs directory you downloaded.
@@ -72,30 +74,48 @@ git init
 heroku git: remote -a <INSERT APP NAME>
 ```
 
-**Deploy your application**
-```
-git add .
-git commit -am "some comment"
-git push heroku master
-```
-
 # Create webhook in Oracle Digital Assistant
 ## In this section we will create a webhook in Oracle Digital Assistant, change service.js, and redeploy the application.
 ### **STEP 1**: Go to your Oracle Digital Assistant Instance.
+-![](images/200heroku/odaInstance.png)
 ### **STEP 2**: Create a channel of type "Webhook".
-Give it a name of your choice. For the "Outgoing webhook URI", go to your heroku app, **click open app**, and copy that    link. The **outgoing webhook URL** will be: **/<URL-THAT-YOU-JUST-COPIED/>/singleBotWebhook/messages** 
-### **STEP 3**: Copy SECRET KEY.
-### **STEP 3**: Copy Webhook URL.
+-Give it a name of your choice. For the "Outgoing webhook URI", go to your heroku app, **click open app**, and copy the **URL** in the new tab that was opened.
+-![](images/200heroku/openApp.png)
+-The **outgoing webhook URL** will be: **/<URL-THAT-YOU-JUST-COPIED/>/singleBotWebhook/messages** 
+-![](images/200heroku/createWH.png)
+### **STEP 3**: Route To your Digital Assistant Skill
+-![](images/200heroku/routing.png)
+### **STEP 3**: Enable the channel
+-![](images/200heroku/chanelEnable.png)
+### **STEP 4**: Copy SECRET KEY and Webhook URL in the newly created webhook.
+-![](images/200heroku/copyID.png)
    
 
   
-# Redeploy nodejs application
+# Deploy nodejs application
 ## Before we redeploy the NodeJS application we need to make some changes in ***service.js***
 ### **STEP 1**: Open service.js in a code editor
 ### **STEP 2**: Change amazon application ID in service.js
-
-- **Use the amazon application id you copied earlier and copy it here** :
+ -Use the amazon application id you copied earlier and copy it here:
 ![](images/200heroku/appID.png)
+### **STEP 3**: Change channelSecretKey in service.js
+![](images/200heroku/channelSecretKey.png)
+### **STEP 4**: Change channelUrl in service.js
+![](images/200heroku/channelUrl.png)
+### **STEP 5**: Redeploy nodeJS application
+Open up terminal and navigate to your directory to where you NodeJS server is located. 
+
+-**Deploy your application**
+    ```
+    git add .
+    git commit -am "redeploying with correct variables"
+    git push heroku master
+    ```
+### **STEP 6**: Test in Alexa Developer Console
+Navigate to your alexa skill and select the test tab. You will be able to interact with you newly created skill by typing or using your microphone. The format to test is as follow:
+```
+Alexa, ask <invocation name> <question your programmed in a Digital Assistant
+```
   
 
 
