@@ -65,27 +65,27 @@ Inside of the nodejs server you downloaded there is a file called package.json. 
   - In your terminal go **INTO** the nodejs directory you downloaded.
   - Run the following commands in terminal: 
   
-    **Create a new GIT repo**
-    ```
-    heroku login
-    git init
-    heroku git: remote -a <INSERT APP NAME>
-    ```
+**Create a new GIT repo**
+```
+heroku login
+git init
+heroku git: remote -a <INSERT APP NAME>
+```
 
-    **Deploy your application**
-    ```
-    git add .
-    git commit -am "some comment"
-    git push heroku master
-    ```
+**Deploy your application**
+```
+git add .
+git commit -am "some comment"
+git push heroku master
+```
 
 # Create webhook in Oracle Digital Assistant
-  ## In this section we will create a webhook in Oracle Digital Assistant, change service.js, and redeploy the application.
-  ### **STEP 1**: Go to your Oracle Digital Assistant Instance.
-  ### **STEP 2**: Create a channel of type "Webhook".
-    Give it a name of your choice. For the "Outgoing webhook URI", go to your heroku app, **click open app**, and copy that    link. The **outgoing webhook URL** will be: **/<URL-THAT-YOU-JUST-COPIED/>/singleBotWebhook/messages** 
-  ### **STEP 3**: Copy SECRET KEY.
-  ### **STEP 3**: Copy Webhook URL.
+## In this section we will create a webhook in Oracle Digital Assistant, change service.js, and redeploy the application.
+### **STEP 1**: Go to your Oracle Digital Assistant Instance.
+### **STEP 2**: Create a channel of type "Webhook".
+Give it a name of your choice. For the "Outgoing webhook URI", go to your heroku app, **click open app**, and copy that    link. The **outgoing webhook URL** will be: **/<URL-THAT-YOU-JUST-COPIED/>/singleBotWebhook/messages** 
+### **STEP 3**: Copy SECRET KEY.
+### **STEP 3**: Copy Webhook URL.
    
 
   
